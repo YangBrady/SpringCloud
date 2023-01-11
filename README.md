@@ -4,6 +4,15 @@
 
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
+## 进度
+- [x] RestTemplate调用版
+- [x] Eureka 单机版
+  - [x] EurekaServer 单机版
+  - [x] EurekaClient服务提供者 单机版
+- [ ] Eureka 集群版
+    - [ ] EurekaServer 集群版
+    - [ ] EurekaClient服务提供者 集群版
+
 端口说明
 * 80 Eureka Client 消费者
 * 8001 Eureka Client 微服务提供者

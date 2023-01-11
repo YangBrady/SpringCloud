@@ -43,8 +43,3 @@ nbdist/
 !*/build/*.html
 !*/build/*.xml
 */target/
-/cloud-provider-payment8001/target/
-/cloud-comsumer-order80/target/
-/cloud-api-commons/target/
-/cloud-provider-payment8002/target/
-/cloud-eureka-server7002/target/

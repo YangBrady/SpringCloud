@@ -5,13 +5,21 @@ spring:
   profiles:
     active: dev
   application:
-    name: cloud-payment-service
+    name: payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
 
-#用mybatis-plugs
-#mybatis:
-#  mapper-locations: classpath:mapper/*.xml
-#  type-aliases-package: me.yangjun.study.springcloud.entities
+eureka:
+  client:
+    fetch-registry: true  #注册自己
+    register-with-eureka: true # 检索注册信息
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    #    ip-address: 127.0.0.1
+    #    instance-id: payment8001
+    #    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
 

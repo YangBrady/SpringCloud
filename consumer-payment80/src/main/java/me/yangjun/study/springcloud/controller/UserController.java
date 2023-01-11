@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping(("/consumer/user"))
 public class UserController {
-    private final static String PROVIDER_URL = "http://127.0.0.1:8081/provider/user/";
+    private final static String PROVIDER_URL = "http://127.0.0.1:8001/provider/user/";
     private final RestTemplate restTemplate;
 
     @GetMapping("/{id}")

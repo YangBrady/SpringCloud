@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("me.yangjun.study.springcloud.dao")
-public class Application8081 {
+public class Application8001 {
     public static void main(String[] args) {
-        SpringApplication.run(Application8081.class, args);
+        SpringApplication.run(Application8001.class, args);
     }
 }

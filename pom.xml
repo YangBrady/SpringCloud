@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <name>StudySpringCloud</name>
     <modules>
-        <module>provider-payment8081</module>
+        <module>provider-payment8001</module>
         <module>api-commons</module>
         <module>consumer-payment80</module>
     </modules>

@@ -12,6 +12,7 @@
         <module>provider-payment8001</module>
         <module>api-commons</module>
         <module>consumer-payment80</module>
+        <module>eureka-server7001</module>
     </modules>
 
     <properties>

@@ -15,11 +15,12 @@ eureka:
     fetch-registry: true  #注册自己
     register-with-eureka: true # 检索注册信息
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      # defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   instance:
-    #    ip-address: 127.0.0.1
-    #    instance-id: payment8001
-    #    prefer-ip-address: true
+    # ip-address: 127.0.0.1
+    # instance-id: consumer80
+    # prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
 

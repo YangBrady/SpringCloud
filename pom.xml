@@ -13,6 +13,7 @@
         <module>api-commons</module>
         <module>consumer-payment80</module>
         <module>eureka-server7001</module>
+        <module>eureka-server7002</module>
     </modules>
 
     <properties>

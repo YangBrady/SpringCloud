@@ -9,9 +9,10 @@
 - [x] Eureka 单机版
   - [x] EurekaServer 单机版
   - [x] EurekaClient服务提供者 单机版
-- [ ] Eureka 集群版
-    - [ ] EurekaServer 集群版
-    - [ ] EurekaClient服务提供者 集群版
+- [x] Eureka 集群版
+    - [x] EurekaServer 集群版
+    - [x] EurekaClient服务提供者 集群版
+    - [x] EurekaClient消费者 请求负载均衡
 
 端口说明
 * 80 Eureka Client 消费者

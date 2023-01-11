@@ -15,13 +15,14 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping(("/consumer/user"))
 public class UserController {
-    private final static String PROVIDER_URL = "http://127.0.0.1:8001/provider/user/";
+//    private final static String PROVIDER_URL = "http://127.0.0.1:8001";
+    private final static String PROVIDER_URL = "http://PAYMENT-SERVICE";
     private final RestTemplate restTemplate;
 
     @GetMapping("/{id}")
     public CommonResult<User> findById(@PathVariable("id") Long id) {
-        String url = PROVIDER_URL + id;
-        log.debug("url:{}", url);
+        String url = PROVIDER_URL + "/provider/user/" + id;
+        log.info("url:{}", url);
 
         return restTemplate.getForObject(url, CommonResult.class);
     }

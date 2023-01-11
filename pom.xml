@@ -9,11 +9,12 @@
     <packaging>pom</packaging>
     <name>StudySpringCloud</name>
     <modules>
-        <module>provider-payment8001</module>
         <module>api-commons</module>
-        <module>consumer-payment80</module>
         <module>eureka-server7001</module>
         <module>eureka-server7002</module>
+        <module>provider-payment8001</module>
+        <module>provider-payment8002</module>
+        <module>consumer-payment80</module>
     </modules>
 
     <properties>

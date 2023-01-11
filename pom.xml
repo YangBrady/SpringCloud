@@ -11,6 +11,7 @@
     <modules>
         <module>provider-payment8081</module>
         <module>api-commons</module>
+        <module>consumer-payment80</module>
     </modules>
 
     <properties>

@@ -16,8 +16,7 @@ public class UserService implements IUserService {
     @Override
     public User getById(Long id) {
         try {
-            TimeUnit.SECONDS.sleep(3
-            );
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

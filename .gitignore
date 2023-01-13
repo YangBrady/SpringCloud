@@ -43,3 +43,5 @@ nbdist/
 !*/build/*.html
 !*/build/*.xml
 */target/
+
+application-*.yml

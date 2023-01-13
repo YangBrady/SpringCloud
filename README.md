@@ -4,7 +4,7 @@
 
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
-## 进度
+### 进度
 - [x] RestTemplate调用版
 - [x] Eureka 单机版
   - [x] EurekaServer 单机版
@@ -13,8 +13,15 @@
     - [x] EurekaServer 集群版
     - [x] EurekaClient服务提供者 集群版
     - [x] EurekaClient消费者 请求负载均衡
+- [ ] Ribbon
 
-端口说明
+### 端口说明
+* 7001/7002 Eureka Server
+* 8001/8002 Eureka Client 微服务提供者
 * 80 Eureka Client 消费者
-* 8001 Eureka Client 微服务提供者
-* 7001 Eureka Server
+
+### Host配置
+```text
+127.0.0.1 eureka7001.com
+127.0.0.1 eureka7002.com
+```

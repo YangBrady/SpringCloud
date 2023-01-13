@@ -13,7 +13,9 @@
     - [x] EurekaServer 集群版
     - [x] EurekaClient服务提供者 集群版
     - [x] EurekaClient消费者 请求负载均衡
-- [ ] Ribbon
+- [x] zookeeper 注册中心 
+- [x] Ribbon 负载均衡
+- [ ] OpenFeign 服务调用
 
 ### 端口说明
 * 7001/7002 Eureka Server

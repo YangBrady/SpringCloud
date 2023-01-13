@@ -10,11 +10,16 @@
     <name>StudySpringCloud</name>
     <modules>
         <module>api-commons</module>
+
         <module>eureka-server7001</module>
         <module>eureka-server7002</module>
+
         <module>provider-payment8001</module>
         <module>provider-payment8002</module>
+        <module>provider-payment8003</module>
+
         <module>consumer-payment80</module>
+        <module>consumer-payment-zk80</module>
     </modules>
 
     <properties>

@@ -18,7 +18,8 @@
 ### 端口说明
 * 7001/7002 Eureka Server
 * 8001/8002 Eureka Client 微服务提供者
-* 80 Eureka Client 消费者
+* 8003 Zookeeper 微服务提供者
+* 80 Eureka Client 消费者/Zookeeper 消费者
 
 ### Host配置
 ```text

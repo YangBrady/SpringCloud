@@ -17,4 +17,12 @@ public class CommonResult<T> {
     public CommonResult(Integer code, String message) {
         this(code, message, null);
     }
+
+    public static CommonResult success(String message) {
+        return new CommonResult(200, message);
+    }
+
+    public static CommonResult fail(String message) {
+        return new CommonResult(500, message);
+    }
 }

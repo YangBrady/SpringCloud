@@ -15,7 +15,8 @@
     - [x] EurekaClient消费者 请求负载均衡
 - [x] zookeeper 注册中心 
 - [x] Ribbon 负载均衡
-- [ ] OpenFeign 服务调用
+- [x] OpenFeign 服务调用
+- [ ] Hystrix 服务降级
 
 ### 端口说明
 * 7001/7002 Eureka Server

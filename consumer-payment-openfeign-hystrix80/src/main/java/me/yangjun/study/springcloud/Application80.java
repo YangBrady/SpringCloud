@@ -1,15 +1,14 @@
 package me.yangjun.study.springcloud;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableHystrix
-@MapperScan("me.yangjun.study.springcloud.dao")
-public class Application8002 {
+@EnableFeignClients
+public class Application80 {
     public static void main(String[] args) {
-        SpringApplication.run(Application8002.class, args);
+        SpringApplication.run(Application80.class, args);
     }
 }

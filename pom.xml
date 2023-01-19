@@ -21,6 +21,7 @@
         <module>consumer-payment80</module>
         <module>consumer-payment-zk80</module>
         <module>consumer-payment-openfeign80</module>
+        <module>consumer-payment-openfeign-hystrix80</module>
     </modules>
 
     <properties>

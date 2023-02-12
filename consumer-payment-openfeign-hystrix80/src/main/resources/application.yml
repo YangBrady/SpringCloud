@@ -1,0 +1,73 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consumer-service
+
+logging:
+  level:
+    me.yangjun.study.springcloud: debug
+
+eureka:
+  client:
+    fetch-registry: true # 检索注册信息，集群必须是true才能配合ribbon使用负载均衡
+    register-with-eureka: true # 注册自己
+    registryFetchIntervalSeconds: 5 # 拉取间隔
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    # ip-address: 127.0.0.1
+    instance-id: consumer80
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
+#ribbon超时时间只有在不开启feign.hystrix.enabled的时候才生效
+ribbon:
+  #连接超时时间，默认2000毫秒
+  ConnectTimeout: 1000
+  #逻辑处理超时时间，默认5000毫秒
+  ReadTimeout: 10000
+  #对当前实例的重试次数，默认0
+  MaxAutoRetries: 1
+  #对切换实例的重试次数，默认1
+  MaxAutoRetriesNextServer: 0
+  #是否所有操作都重试, false只重试get请求，true所有都重试，
+  OkToRetryOnAllOperations: false
+
+feign:
+  hystrix:
+    # 开启Hystrix
+    enabled: true
+  client:
+    config:
+      #设置feign 日志级别
+      default:
+        logger-level: BASIC
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #是否开启超时熔断时间，false表示服务不可用时才会使用Hystrix熔断时间，默认为true
+          enabled: true
+        isolation:
+          thread:
+            #超时熔断时间，默认为1000毫秒，一般会设置成小于ribbon超时时间，不然ribbon重试的时候不会触发熔断
+            timeoutInMilliseconds: 6000
+
+#Ribbon重试
+#  Ribbon超时的时候会重试，重试过程中如果到了Hystrix熔断时间会触发fall-back方法
+#重试次数计算：MaxAutoRetries+MaxAutoRetriesNextServer+(MaxAutoRetries *MaxAutoRetriesNextServer)
+
+#Hystrix熔断最大时间的计算：
+#开启了熔断时间，熔断时间到，就会调用熔断方法。
+#未开启熔断时间，
+#  如果服务不可用，直接使用熔断时间，
+#  如果服务是可用的，使用Ribbon超时：（MaxAutoRetries+1）*（MaxAutoRetriesNextServer+1） * （ConnectTimeout+ReadTimeout）
+
+#Ribbon超时时间<Hystrix超时时间的时候（一般配置），Ribbon跟Hystrix执行步骤
+#发起请求--Hystrix超时(熔断)--Ribbon超时--Ribbon重试

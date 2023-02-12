@@ -14,7 +14,8 @@ eureka:
     fetch-registry: false # 不检索
     register-with-eureka: false # 不注册自己
     service-url:
-      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/ # 多实例
+
   server:
     #关闭自我保护机制，保证不可用服务立即被踢出
     enable-self-preservation: true

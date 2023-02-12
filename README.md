@@ -1,4 +1,5 @@
-##持续更新中
+持续更新中
+
 # SpringCloud
 跟着尚硅谷周阳老师SpringCloud学习、代码、笔记记录
 
@@ -17,7 +18,8 @@
 - [x] Ribbon 负载均衡
 - [x] OpenFeign 服务调用
 - [ ] Hystrix 服务降级
-    - [ ] 服务侧降级
+    - [x] 服务侧降级
+    - [x] 消费侧降级
 
 ### 端口说明
 * 7001/7002 Eureka Server

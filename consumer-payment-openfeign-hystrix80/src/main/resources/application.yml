@@ -56,9 +56,10 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            #超时熔断时间，默认为1000毫秒，一般会设置成小于ribbon超时时间，不然ribbon重试的时候不会触发熔断
+            #超时熔断时间，默认为1000毫秒
             timeoutInMilliseconds: 6000
 
+#Ribbon超时时间=（MaxAutoRetries+1）*（MaxAutoRetriesNextServer+1） * （ConnectTimeout+ReadTimeout）
 #Ribbon重试
 #  Ribbon超时的时候会重试，重试过程中如果到了Hystrix熔断时间会触发fall-back方法
 #重试次数计算：MaxAutoRetries+MaxAutoRetriesNextServer+(MaxAutoRetries *MaxAutoRetriesNextServer)
@@ -67,7 +68,10 @@ hystrix:
 #开启了熔断时间，熔断时间到，就会调用熔断方法。
 #未开启熔断时间，
 #  如果服务不可用，直接使用熔断时间，
-#  如果服务是可用的，使用Ribbon超时：（MaxAutoRetries+1）*（MaxAutoRetriesNextServer+1） * （ConnectTimeout+ReadTimeout）
+#  如果服务是可用的，使用Ribbon超时时间
 
-#Ribbon超时时间<Hystrix超时时间的时候（一般配置），Ribbon跟Hystrix执行步骤
-#发起请求--Hystrix超时(熔断)--Ribbon超时--Ribbon重试
+#Ribbon跟Hystrix执行步骤
+#  Ribbon超时时间<Hystrix超时时间的时候
+#    发起请求--Ribbon超时(Ribbon重试)--Hystrix超时(熔断)
+#  Ribbon超时时间>Hystrix超时时间的时候
+#    发起请求--Hystrix超时(熔断)--Ribbon超时(Ribbon重试)

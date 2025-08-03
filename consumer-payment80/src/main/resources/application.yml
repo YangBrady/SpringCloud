@@ -2,9 +2,10 @@ server:
   port: 80
 
 spring:
+  profiles:
+    active: dev
   application:
     name: consumer-service
-  profiles: dev
 
 logging:
   level:
@@ -16,10 +17,9 @@ eureka:
     register-with-eureka: true # 注册自己
     registryFetchIntervalSeconds: 5 # 拉取间隔
     service-url:
-      # defaultZone: http://localhost:7001/eureka/
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   instance:
-    # ip-address: 127.0.0.1
+    ip-address: 127.0.0.1
     instance-id: consumer80
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1

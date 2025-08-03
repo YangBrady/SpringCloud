@@ -6,9 +6,6 @@ spring:
     active: dev
   application:
     name: payment-service
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
 eureka:
   client:
@@ -19,7 +16,7 @@ eureka:
   instance:
     instance-id: payment8001
     # eureka网页显示ip链接
-#    ip-address: 127.0.0.1
+    # ip-address: 127.0.0.1
     prefer-ip-address: true
     # Eureka客户端向服务端发送信条的时间间隔，默认是30s
     lease-renewal-interval-in-seconds: 30

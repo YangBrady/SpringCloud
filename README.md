@@ -5,6 +5,11 @@
 
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
+### 教程进度
+* 2025年8月3日 25
+* 2025年8月4日 26
+* 2025年8月5日 从 Spring Cloud Hoxton.M2 版本开始，Spring Cloud 已经不再默认使用Ribbon来做负载均衡了，而是使用 spring-cloud-starter-loadbalancer替代
+
 ### 进度
 - [x] RestTemplate调用版
 - [x] Eureka 单机版

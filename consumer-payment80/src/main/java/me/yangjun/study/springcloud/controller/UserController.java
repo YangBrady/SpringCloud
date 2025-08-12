@@ -26,4 +26,11 @@ public class UserController {
 
         return restTemplate.getForObject(url, CommonResult.class);
     }
+
+    @GetMapping("/timeout")
+    public CommonResult<User> timeout() {
+        String url = PROVIDER_URL + "/provider/user/timeout/";
+        log.info("url:{}", url);
+        return restTemplate.getForObject(url, CommonResult.class);
+    }
 }

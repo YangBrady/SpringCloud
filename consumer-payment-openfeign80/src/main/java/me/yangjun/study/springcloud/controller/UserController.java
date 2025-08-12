@@ -21,4 +21,9 @@ public class UserController {
     public CommonResult<User> findById(@PathVariable("id") Long id) {
         return userService.getById(id);
     }
+
+    @GetMapping("/user/timeout")
+    public CommonResult<User> timeout() {
+        return userService.timeout();
+    }
 }

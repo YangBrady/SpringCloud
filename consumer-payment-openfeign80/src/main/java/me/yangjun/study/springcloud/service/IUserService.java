@@ -13,4 +13,7 @@ public interface IUserService {
 
     @GetMapping("/provider/user/findById/{id}")
     CommonResult<User> getById(@PathVariable("id") Long id);
+
+    @GetMapping("/provider/user/timeout")
+    CommonResult<User> timeout();
 }

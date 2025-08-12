@@ -1,5 +1,6 @@
 package me.yangjun.study.springcloud.controller;
 
+import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +39,17 @@ public class UserController {
         User user = userService.getById(id);
         return CommonResult.<User>builder().code(HttpStatus.HTTP_OK).message(appName + ":" + serverPort).data(user)
             .build();
+    }
+
+    @GetMapping("/timeout")
+    public CommonResult<User> timeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+
+        User user = new User();
+        user.setId(1L);
+        user.setName("yangjun");
+        user.setAge(18);
+        return new CommonResult<>(200, "查询成功, serverPort=" + serverPort, user);
     }
 
     /**

@@ -1,6 +1,7 @@
 package me.yangjun.study.springcloud.controller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import me.yangjun.study.springcloud.common.entitys.CommonResult;
@@ -27,6 +28,17 @@ public class UserController {
     public CommonResult<User> findById(@PathVariable("id") Long id) {
         User user = new User();
         user.setId(id);
+        user.setName("yangjun");
+        user.setAge(18);
+        return new CommonResult<>(200, "查询成功, serverPort=" + serverPort, user);
+    }
+
+    @GetMapping("/timeout")
+    public CommonResult<User> timeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+
+        User user = new User();
+        user.setId(1L);
         user.setName("yangjun");
         user.setAge(18);
         return new CommonResult<>(200, "查询成功, serverPort=" + serverPort, user);

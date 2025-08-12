@@ -21,7 +21,17 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 90
 
-#设置feign客户端超时时间，单位毫秒
+#设置 feign 客户端超时时间，单位毫秒，优先级比ribbon高
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 1000
+        connectTimeout: 1000
+      PAYMENT-SERVICE:
+        readTimeout: 5000
+        connectTimeout: 3000
+#设置 ribbon 客户端超时时间，单位毫秒，注意大小写
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 3000

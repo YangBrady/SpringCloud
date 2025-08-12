@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final IUserService userService;
-    @GetMapping("/user/{id}")
+    @GetMapping("/user/findById/{id}")
     public CommonResult<User> findById(@PathVariable("id") Long id) {
         return userService.getById(id);
     }

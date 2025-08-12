@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient("PAYMENT-SERVICE")
 public interface IUserService {
 
-    @GetMapping("/provider/user/{id}")
+    @GetMapping("/provider/user/findById/{id}")
     CommonResult<User> getById(@PathVariable("id") Long id);
 }

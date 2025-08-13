@@ -12,6 +12,9 @@ import me.yangjun.study.springcloud.service.fallback.UserServiceFallback;
 @Component
 @FeignClient(value = "PAYMENT-SERVICE", fallback = UserServiceFallback.class)
 public interface IUserService {
+    @GetMapping("/provider/user/findByIdTimeOut}")
+    CommonResult<User> findByIdTimeOut();
+
     @GetMapping("/provider/user/findById/{id}")
     CommonResult<User> findById(@PathVariable("id") Long id);
 

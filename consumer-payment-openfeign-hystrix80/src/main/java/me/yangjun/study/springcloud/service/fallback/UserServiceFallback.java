@@ -12,6 +12,11 @@ import me.yangjun.study.springcloud.service.IUserService;
 @Component
 public class UserServiceFallback implements IUserService {
     @Override
+    public CommonResult<User> findByIdTimeOut() {
+        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端降级兜底").build();
+    }
+
+    @Override
     public CommonResult<User> findById(Long id) {
         log.error("异常，客户端熔断, id={}", id);
 

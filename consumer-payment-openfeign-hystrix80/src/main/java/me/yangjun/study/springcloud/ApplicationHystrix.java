@@ -7,8 +7,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class Application80 {
+@EnableHystrix
+public class ApplicationHystrix {
     public static void main(String[] args) {
-        SpringApplication.run(Application80.class, args);
+        SpringApplication.run(ApplicationHystrix.class, args);
     }
 }

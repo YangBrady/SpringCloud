@@ -1,5 +1,6 @@
 package me.yangjun.study.springcloud.controller;
 
+import javafx.beans.DefaultProperty;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,11 @@ public class UserController {
     @GetMapping("/findById/{id}")
     public CommonResult<User> findById(@PathVariable("id") Long id) {
         return userService.findById(id);
+    }
+
+    @GetMapping("/findByIdTimeOut")
+    public CommonResult<User> findByIdTimeOut() {
+        return userService.findByIdTimeOut();
     }
 
     @GetMapping("/findByIdTimeOutServerHystrix/{id}")

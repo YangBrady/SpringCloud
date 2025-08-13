@@ -18,7 +18,7 @@ public interface IUserService {
      * @param id id
      * @return {@link User}
      */
-    User findByIdTimeOut(Long id);
+    User findByIdTimeOut();
 
     /**
      * 超时服务5s，2s后提供熔断服务
@@ -27,4 +27,5 @@ public interface IUserService {
      * @return {@link User}
      */
     User findByIdTimeOutHystrix(Long id);
+    User findByIdTimeOutHystrix2(Long id);
 }

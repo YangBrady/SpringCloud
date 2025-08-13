@@ -1,5 +1,6 @@
 package me.yangjun.study.springcloud.service.impl;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import java.util.concurrent.TimeUnit;
@@ -12,23 +13,23 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@DefaultProperties(defaultFallback = "defaultHystrixHandler")
 public class UserService implements IUserService {
     @Override
     public User getById(Long id) {
         log.debug("id={}", id);
-        return new User(id, "yangjun", 18, "123@163.com");
+        return User.builder().id(id).name("yangjun").age(18).build();
     }
 
     @Override
-    public User findByIdTimeOut(Long id) {
+    public User findByIdTimeOut() {
         try {
-            log.debug("id={}", id);
             TimeUnit.SECONDS.sleep(6);
             log.debug("sleep over");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        return new User(id, "yangjun", 18, "123@163.com");
+        return null;
     }
 
     @Override
@@ -45,6 +46,15 @@ public class UserService implements IUserService {
         return null;
     }
 
+    @Override
+    @HystrixCommand
+    public User findByIdTimeOutHystrix2(Long id) {
+        log.debug("id={}", id);
+        try {TimeUnit.SECONDS.sleep(5);} catch (InterruptedException e) {throw new RuntimeException(e);}
+        log.debug("sleep over"); // 熔断以后不会执行
+        return null;
+    }
+
     /**
      * Hystrix兜底方法
      *
@@ -54,5 +64,13 @@ public class UserService implements IUserService {
     private User findByIdTimeOutHystrixHandler(Long id) {
         log.error("服务端降级, id={}, ", id);
         return new User();
+    }
+
+    /**
+     * Hystrix默认兜底方法
+     */
+    private User defaultHystrixHandler() {
+        log.error("服务端降级 默认方法");
+        return User.builder().remark("😭").build();
     }
 }

@@ -58,11 +58,10 @@ public class UserController {
      * @param id id
      * @return {@link CommonResult}<{@link User}>
      */
-    @GetMapping("/findByIdTimeOut/{id}")
-    public CommonResult<User> findByIdTimeOut(@PathVariable("id") Long id) {
-        log.info("接收请求, id={}", id);
-
-        User user = userService.findByIdTimeOut(id);
+    @GetMapping("/findByIdTimeOut/")
+    public CommonResult<User> findByIdTimeOut() {
+        log.info("接收请求");
+        User user = userService.findByIdTimeOut();
         return CommonResult.<User>builder().code(HttpStatus.HTTP_OK).message(appName + ":" + serverPort).data(user)
             .build();
     }
@@ -78,6 +77,14 @@ public class UserController {
         log.info("接收请求, id={}", id);
 
         User user = userService.findByIdTimeOutHystrix(id);
+        return CommonResult.<User>builder().code(HttpStatus.HTTP_OK).message(appName + ":" + serverPort).data(user)
+            .build();
+    }
+
+    @GetMapping("/findByIdTimeOutHystrix2/{id}")
+    public CommonResult<User> findByIdTimeOutHystrix2(@PathVariable("id") Long id) {
+        log.info("接收请求, id={}", id);
+        User user = userService.findByIdTimeOutHystrix2(id);
         return CommonResult.<User>builder().code(HttpStatus.HTTP_OK).message(appName + ":" + serverPort).data(user)
             .build();
     }

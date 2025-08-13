@@ -42,7 +42,7 @@ public class UserService implements IUserService {
     public User findByIdTimeOutHystrix(Long id) {
         log.debug("id={}", id);
         try {TimeUnit.SECONDS.sleep(5);} catch (InterruptedException e) {throw new RuntimeException(e);}
-        log.debug("sleep over"); // 熔断以后不会执行
+        log.debug("sleep over"); // 降级以后不会执行
         return null;
     }
 
@@ -51,7 +51,7 @@ public class UserService implements IUserService {
     public User findByIdTimeOutHystrix2(Long id) {
         log.debug("id={}", id);
         try {TimeUnit.SECONDS.sleep(5);} catch (InterruptedException e) {throw new RuntimeException(e);}
-        log.debug("sleep over"); // 熔断以后不会执行
+        log.debug("sleep over"); // 降级以后不会执行
         return null;
     }
 

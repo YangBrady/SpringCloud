@@ -18,21 +18,21 @@ public class UserServiceFallback implements IUserService {
 
     @Override
     public CommonResult<User> findById(Long id) {
-        log.error("异常，客户端熔断, id={}", id);
+        log.error("异常，客户端降级, id={}", id);
 
-        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端熔断兜底").build();
+        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端降级兜底").build();
     }
 
     @Override
     public CommonResult<User> findByIdTimeOutServerHystrix(Long id) {
-        // 服务端熔断时间 >= 客户端熔断时间的时候才会出发
-        log.error("服务端熔断检测时间过长，客户端开始熔断, id={}", id);
-        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端熔断兜底").build();
+        // 服务端降级时间 >= 客户端降级时间的时候才会出发
+        log.error("服务端降级检测时间过长，客户端开始降级, id={}", id);
+        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端降级兜底").build();
     }
 
     @Override
     public CommonResult<User> findByIdTimeOutClientHystrix(Long id) {
-        log.error("客户端开始熔断, id={}", id);
-        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端熔断兜底").build();
+        log.error("客户端开始降级, id={}", id);
+        return CommonResult.<User>builder().code(HttpStatus.HTTP_INTERNAL_ERROR).message("客户端降级兜底").build();
     }
 }

@@ -36,7 +36,8 @@ public class UserService implements IUserService {
     @HystrixCommand(
         fallbackMethod = "findByIdTimeOutHystrixHandler",
         commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
+            @HystrixProperty(name = "circuitBreaker.enable", value = "true")
         }
     )
     public User findByIdTimeOutHystrix(Long id) {

@@ -1,0 +1,16 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: CONFIG-CLIENT-3355
+  cloud:
+    config:
+      uri: http://localhost:3344 #配置服务地址
+      label: master #分支名
+      name: config-server #配置文件名称
+      profile: dev #环境
+
+logging:
+  level:
+    org.springframework: debug

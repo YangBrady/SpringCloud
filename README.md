@@ -1,14 +1,12 @@
 持续更新中
 
-# SpringCloud
+## SpringCloud
 跟着尚硅谷周阳老师SpringCloud学习、代码、笔记记录
 
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
 ### 教程进度
-* 2025年8月3日 25
-* 2025年8月4日 26
-* 2025年8月5日 从 Spring Cloud Hoxton.M2 版本开始，Spring Cloud 已经不再默认使用Ribbon来做负载均衡了，而是使用 spring-cloud-starter-loadbalancer替代
+* 2025年8月23日 78
 
 ### 进度
 - [x] RestTemplate调用版
@@ -28,10 +26,12 @@
 
 ### 端口说明
 * 7001/7002 Eureka Server
-* 8001/8002 Eureka Client 微服务提供者
-* 8002 Hystrix
+* 8001 Eureka Client 微服务提供者
+* 8002 Hystrix Eureka Client 微服务提供者
 * 8003 Zookeeper 微服务提供者
 * 80 Eureka Client 消费者/Zookeeper 消费者
+* 9527 Gateway
+* 3344 配置中心
 
 ### Host配置
 ```text

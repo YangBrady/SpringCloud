@@ -1,5 +1,8 @@
 server:
   port: 3355
+logging:
+  level:
+    org.springframework: info
 
 spring:
   application:
@@ -11,6 +14,9 @@ spring:
       name: config-server #配置文件名称
       profile: dev #环境
 
-logging:
-  level:
-    org.springframework: debug
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info

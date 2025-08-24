@@ -13,10 +13,12 @@ spring:
       label: master #分支名
       name: config-server #配置文件名称
       profile: dev #环境
+  kafka:
+    bootstrap-servers: localhost:9092
 
 # 暴露端点
 management:
   endpoints:
     web:
       exposure:
-        include: refresh,health,info
+        include: refresh, bus-refresh, health, info

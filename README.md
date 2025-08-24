@@ -6,7 +6,7 @@
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
 ### 教程进度
-* 2025年8月23日 78
+* 2025年8月24日 83
 
 ### 进度
 - [x] RestTemplate调用版
@@ -31,7 +31,8 @@
 * 8003 Zookeeper 微服务提供者
 * 80 Eureka Client 消费者/Zookeeper 消费者
 * 9527 Gateway
-* 3344 配置中心
+* 3344 Config Server
+* 3355 Config Client
 
 ### Host配置
 ```text

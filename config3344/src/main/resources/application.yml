@@ -13,7 +13,16 @@ spring:
           uri: https://gitee.com/looyang/config.git #配置文件所在仓库
           default-label: master #默认git分支
           search-paths: springcloud  #代码仓中， 配置文件所在目录
+  kafka:
+    bootstrap-servers: localhost:9092
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh, health, info
 
 logging:
   level:
-    org.springframework: debug
+    org.springframework: info

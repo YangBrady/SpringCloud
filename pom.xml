@@ -22,8 +22,11 @@
         <module>consumer-payment-zk80</module>
         <module>consumer-payment-openfeign80</module>
         <module>consumer-payment-openfeign-hystrix80</module>
-      <module>config3344</module>
-      <module>config-client3355</module>
+        <module>config3344</module>
+        <module>config-client3355</module>
+
+        <module>nacos-provider9001</module>
+        <module>nacos-consumer80</module>
     </modules>
 
     <properties>
@@ -56,6 +59,14 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>Hoxton.SR12</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--  spring cloud alibaba 2.2.10-RC2  -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.10-RC2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

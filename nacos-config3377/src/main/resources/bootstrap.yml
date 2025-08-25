@@ -1,0 +1,26 @@
+server:
+  port: 3377
+logging:
+  level:
+    org.springframework: info
+
+spring:
+  application:
+    name: NACOS-CONFIG-3377
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml # 配置文件后缀
+        namespace: '09c27e83-cdbb-4f64-92eb-e585cef7b3d7' # 命名空间
+        group: 2025 # 分组
+
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

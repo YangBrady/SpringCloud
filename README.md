@@ -6,7 +6,7 @@
 [尚硅谷2020最新版SpringCloud(H版&Alibaba)](https://www.bilibili.com/video/BV18E411x7eT)
 
 ### 教程进度
-* 2025年8月24日 83
+* 2025年8月25日 110
 
 ### 进度
 - [x] RestTemplate调用版

@@ -27,6 +27,7 @@
 
         <module>nacos-provider9001</module>
         <module>nacos-consumer80</module>
+        <module>nacos-config3377</module>
     </modules>
 
     <properties>
